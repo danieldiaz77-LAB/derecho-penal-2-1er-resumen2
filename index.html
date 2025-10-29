@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 1: Teoría del Delito de Omisión</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 40px;
+        }
+        
+        .titulo-principal {
+            font-size: 2.8em;
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease;
+        }
+        
+        .subtitulo {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 5px;
+        }
+        
+        .profesor {
+            font-size: 1em;
+            opacity: 0.85;
+            font-style: italic;
+        }
+        
+        .modulo-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 20px;
+            margin-top: 15px;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+        }
+        
+        .pizarra {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+            margin-bottom: 30px;
+        }
+        
+        .seccion {
+            margin-bottom: 45px;
+            padding-bottom: 35px;
+            border-bottom: 3px solid #667eea;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .seccion:last-child {
+            border-bottom: none;
+        }
+        
+        .seccion-titulo {
+            font-size: 2em;
+            color: #667eea;
+            margin-bottom: 25px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .seccion-titulo:hover {
+            color: #764ba2;
+            transform: translateX(5px);
+        }
+        
+        .icono {
+            font-size: 1.4em;
+            animation: pulse 2s infinite;
+        }
+        
+        .contenido {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 6px solid #667eea;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            line-height: 1.8;
+        }
+        
+        .concepto-clave {
+            background: linear-gradient(135deg, #667eea15, #764ba215);
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .concepto-titulo {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 12px;
+        }
+        
+        .definicion {
+            background: #e8eaf6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            font-size: 1.05em;
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .lista-puntos {
+            margin: 15px 0 15px 25px;
+        }
+        
+        .lista-puntos li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+        }
+        
+        .ejemplo {
+            background: #f0fff4;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid #4CAF50;
+        }
+        
+        .ejemplo-titulo {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .importante {
+            background: #fff3cd;
+            padding: 18px;
+            border-radius: 10px;
+            border-left: 5px solid #ff9800;
+            margin: 20px 0;
+        }
+        
+        .importante-titulo {
+            font-weight: bold;
+            color: #f57f17;
+            margin-bottom: 10px;
+        }
+        
+        .esquema {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .esquema-titulo {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        
+        .tabla th {
+            background: #667eea;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .tabla td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tabla tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .categorias-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .categoria-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .categoria-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .comparacion {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .box-comparacion {
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .box-omision-propia {
+            background: #e3f2fd;
+            border: 3px solid #2196F3;
+        }
+        
+        .box-omision-impropia {
+            background: #fce4ec;
+            border: 3px solid #e91e63;
+        }
+        
+        .box-titulo {
+            font-weight: bold;
+            margin-bottom: 12px;
+            font-size: 1.15em;
+        }
+        
+        .box-omision-propia .box-titulo {
+            color: #1976d2;
+        }
+        
+        .box-omision-impropia .box-titulo {
+            color: #c2185b;
+        }
+        
+        .elementos-tipo {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border: 2px solid #667eea;
+        }
+        
+        .elemento-numero {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .fuentes-garante {
+            background: #fff9e6;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 5px solid #ffa726;
+        }
+        
+        .fuente-titulo {
+            font-weight: bold;
+            color: #ef6c00;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .caso-practico {
+            background: #e8f5e9;
+            padding: 22px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border: 3px solid #4caf50;
+        }
+        
+        .caso-titulo {
+            font-weight: bold;
+            color: #2e7d32;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+        
+        .nav-modulos {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .nav-titulo {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .modulos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        
+        .modulo-link {
+            background: rgba(255,255,255,0.25);
+            padding: 15px;
+            border-radius: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: block;
+        }
+        
+        .modulo-link:hover {
+            background: rgba(255,255,255,0.4);
+            transform: translateY(-3px);
+        }
+        
+        .modulo-link.activo {
+            background: rgba(255,255,255,0.9);
+            color: #667eea;
+        }
+        
+        .motivacional {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #ff6b6b, #feca57);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: none;
+        }
+        
+        .motivacional:hover {
+            transform: scale(1.1) rotate(2deg);
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .titulo-principal {
+                font-size: 2em;
+            }
+            
+            .pizarra {
+                padding: 25px;
+            }
+            
+            .categorias-grid,
+            .comparacion {
+                grid-template-columns: 1fr;
+            }
+            
+            .motivacional {
+                bottom: 15px;
+                right: 15px;
+                font-size: 0.9em;
+                padding: 12px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="titulo-principal">⚖️ DERECHO PENAL II</h1>
+            <div class="subtitulo">Módulo 1: Teoría del Delito de Omisión</div>
+            <div class="profesor">Prof. Dr. Mauricio Rettig Espinoza</div>
+            <div class="modulo-badge">📚 Módulo 1 de 4</div>
+        </div>
+        
+        <div class="pizarra">
+            <!-- SECCIÓN 1: CONCEPTO DE DELITO OMISIVO -->
+            <div class="seccion">
+                <div class="seccion-titulo" onclick="mostrarMotivacion()">
+                    <span class="icono">💡</span>
+                    CONCEPTO DE DELITO OMISIVO
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">📌 Definición Fundamental</div>
+                        <div class="definicion">
+                            Es un <strong>juicio típico de atribución de responsabilidad penal</strong>, por el que al protagonista de un comportamiento humano, externo y voluntario, se imputa la <strong>NO realización de una prestación positiva de salvaguarda típica</strong>, estimada <em>ex-ante</em> como necesaria y posible para la protección de un bien jurídico.
+                        </div>
+                    </div>
+                    
+                    <div class="importante">
+                        <div class="importante-titulo">⚠️ Elementos Clave del Concepto</div>
+                        <ul class="lista-puntos">
+                            <li><strong>Infracción de una norma preceptiva o de mandato</strong> (no prohibitiva)</li>
+                            <li><strong>Infracción de un deber jurídico de actuar</strong> en un sentido determinado</li>
+                            <li>El deber puede estar:
+                                <ul style="margin-top: 8px;">
+                                    <li>✓ <strong>Indicado en el tipo penal</strong> → Omisión propia</li>
+                                    <li>✓ <strong>Desprenderse de su sentido normativo</strong> → Omisión impropia</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">🎯 Esencia del Delito Omisivo</div>
+                        <ul class="lista-puntos">
+                            <li><strong>NO es la mera pasividad</strong> (ontológica) del autor</li>
+                            <li>Es la <strong>NO realización de la conducta positiva de salvaguarda típica</strong> estimada <em>ex ante</em> como necesaria y posible</li>
+                            <li>El sujeto <strong>omite incluso si realiza cualquier conducta positiva distinta</strong> a la esperada por la norma jurídica</li>
+                            <li>Es un <strong>concepto NORMATIVO</strong>, NO ontológico</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: DISTINCIÓN ACCIÓN VS OMISIÓN -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">⚖️</span>
+                    DISTINCIÓN ENTRE ACCIÓN Y OMISIÓN
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">📊 Criterio Fundamental de Distinción</div>
+                        <p style="font-size: 1.05em; margin-bottom: 15px;">
+                            La diferencia entre acción y omisión <strong>depende de la naturaleza de la norma infringida</strong>:
+                        </p>
+                    </div>
+                    
+                    <div class="comparacion">
+                        <div class="box-comparacion" style="background: #ffebee; border: 3px solid #f44336;">
+                            <div class="box-titulo" style="color: #c62828;">🚫 NORMA PROHIBITIVA</div>
+                            <p><strong>→ Delito de ACCIÓN</strong></p>
+                            <p style="margin-top: 10px;">Prohíbe realizar una conducta que causa lesión o peligro al bien jurídico</p>
+                        </div>
+                        
+                        <div class="box-comparacion" style="background: #e8f5e9; border: 3px solid #4caf50;">
+                            <div class="box-titulo" style="color: #2e7d32;">✅ NORMA PRECEPTIVA</div>
+                            <p><strong>→ Delito de OMISIÓN</strong></p>
+                            <p style="margin-top: 10px;">Obliga a realizar una determinada conducta deseable para evitar la lesión del bien jurídico</p>
+                        </div>
+                    </div>
+                    
+                    <div class="importante">
+                        <div class="importante-titulo">🔍 Casos Límites - Criterio de la Causalidad</div>
+                        <p style="margin-bottom: 12px;">
+                            Hay casos donde una conducta parece infringir AMBAS normas. En estos casos:
+                        </p>
+                        <p style="background: #fff; padding: 15px; border-radius: 8px; font-weight: 500;">
+                            <strong>Si alguien ha causado el resultado mediante un hecho positivo doloso o imprudente objetivamente adecuado al tipo</strong> → Es un <strong>delito de ACCIÓN</strong>
+                        </p>
+                    </div>
+                    
+                    <div class="ejemplo">
+                        <div class="ejemplo-titulo">📋 Ejemplo 1: Delito de Acción (no omisión)</div>
+                        <p>
+                            Un médico, en lugar de novocaína (lo indicado para anestesiar al paciente), le suministra <strong>negligentemente cocaína</strong>, por lo que el paciente perece.
+                        </p>
+                        <p style="margin-top: 12px; font-weight: 500; color: #2e7d32;">
+                            ✓ <strong>Análisis:</strong> El resultado letal es imputable a una <strong>acción positiva</strong> (suministro de cocaína) que constituye delito imprudente. Por tanto, NO cabe plantear la existencia de un delito de omisión por no haber suministrado novocaína.
+                        </p>
+                    </div>
+                    
+                    <div class="ejemplo">
+                        <div class="ejemplo-titulo">📋 Ejemplo 2: Concurso de Delitos (Acción + Omisión)</div>
+                        <p>
+                            Un conductor <strong>atropella a una persona por imprudencia</strong> (delito de acción) y luego <strong>se da a la fuga dolosamente sin socorrer</strong> a la víctima (delito de omisión).
+                        </p>
+                        <p style="margin-top: 12px; font-weight: 500; color: #2e7d32;">
+                            ✓ <strong>Normativa:</strong> Art. 195 inc. 3° de la Ley 18.290 (Ley de Tránsito)
+                        </p>
+                        <p style="margin-top: 8px;">
+                            El desvalor de la fase omisiva NO es abarcado por el delito de acción.
+                        </p>
+                    </div>
+                    
+                    <div class="importante">
+                        <div class="importante-titulo">⚖️ Importancia de la Distinción</div>
+                        <ul class="lista-puntos">
+                            <li>Diferente <strong>estructura típica</strong></li>
+                            <li><strong>Mayores requisitos</strong> en la comisión por omisión (hay que acreditar la posición de garante)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: UBICACIÓN SISTEMÁTICA -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🗂️</span>
+                    UBICACIÓN SISTEMÁTICA
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">📐 Marco Teórico</div>
+                        <p style="font-size: 1.05em;">
+                            La omisión es una <strong>modalidad típica determinada por la clase de norma infringida</strong>: norma preceptiva.
+                        </p>
+                        <div class="definicion" style="margin-top: 15px;">
+                            <strong>Injusto de omisión:</strong> No realizar la prestación deseable, posible y obligada por una norma preceptiva establecida a fin de evitar la lesión o puesta en riesgo de un bien jurídico.
+                        </div>
+                    </div>
+                    
+                    <div class="esquema">
+                        <div class="esquema-titulo">⚖️ 4 CATEGORÍAS ESTRUCTURALES A NIVEL DE TIPO</div>
+                        <div class="categorias-grid">
+                            <div class="categoria-card">
+                                TIPOS DE ACCIÓN<br>DOLOSOS
+                            </div>
+                            <div class="categoria-card">
+                                TIPOS DE ACCIÓN<br>IMPRUDENTES
+                            </div>
+                            <div class="categoria-card">
+                                TIPOS DE OMISIÓN<br>DOLOSOS
+                            </div>
+                            <div class="categoria-card">
+                                TIPOS DE OMISIÓN<br>IMPRUDENTES
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="importante">
+                        <div class="importante-titulo">🔄 Aspecto Común: Acción y Omisión</div>
+                        <p style="font-size: 1.05em; margin-bottom: 12px;">
+                            Ambas modalidades comparten: <strong>Comportamiento humano, externo y voluntario</strong>
+                        </p>
+                        <p style="margin-bottom: 12px;">
+                            En la omisión, el comportamiento consiste en <strong>NO realizar la conducta de salvaguarda ordenada</strong> por el tipo penal.
+                        </p>
+                        <p style="font-weight: 600; color: #667eea;">
+                            ⚠️ Falta el comportamiento (y por tanto el delito) por las mismas razones que en la conducta activa:
+                        </p>
+                        <ul class="lista-puntos">
+                            <li>❌ Fuerza irresistible</li>
+                            <li>❌ Actos reflejos</li>
+                            <li>❌ Inconciencia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 4: TIPOS DE OMISIÓN -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🔀</span>
+                    TIPOS DE OMISIÓN
+                </div>
+                <div class="contenido">
+                    <div class="comparacion">
+                        <div class="box-comparacion box-omision-propia">
+                            <div class="box-titulo">📘 OMISIÓN PROPIA</div>
+                            <p style="margin: 10px 0;"><strong>Aquellos en los que la omisión se encuentra DESCRITA EN LA LEY</strong></p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>Existe un tipo redactado en términos omisivos</li>
+                                <li>La ley establece los presupuestos bajo los que la omisión es típica</li>
+                                <li>Para establecer la tipicidad, el juez debe constatar la concurrencia de la omisión descrita</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="box-comparacion box-omision-impropia">
+                            <div class="box-titulo">📕 OMISIÓN IMPROPIA</div>
+                            <p style="margin: 10px 0;"><strong>También llamada "comisión por omisión"</strong></p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li>NO regulados expresamente en la ley</li>
+                                <li>Se construyen interpretativamente a partir de un tipo redactado en términos activos</li>
+                                <li>La omisión de la conducta jurídicamente debida y posible es equiparable a la realización activa del tipo penal respectivo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 5: OMISIÓN PROPIA - TIPO OBJETIVO -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">📘</span>
+                    OMISIÓN PROPIA: TIPO OBJETIVO
+                </div>
+                <div class="contenido">
+                    <div class="importante">
+                        <div class="importante-titulo">📌 Característica General</div>
+                        <p>Son normalmente <strong>tipos de mera actividad</strong></p>
+                    </div>
+                    
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">🎯 4 Elementos del Tipo Objetivo</div>
+                    </div>
+                    
+                    <div class="elementos-tipo">
+                        <p style="margin-bottom: 15px;">
+                            <span class="elemento-numero">a</span>
+                            <strong style="font-size: 1.15em; color: #667eea;">Situación típica</strong>
+                        </p>
+                        <ul class="lista-puntos">
+                            <li>Situación de hecho que <strong>amenaza o pone en peligro</strong> a un bien jurídico</li>
+                            <li>Está descrita en la ley como presupuesto del deber jurídico del SA de actuar</li>
+                            <li>El tipo penal describe la conducta debida</li>
+                        </ul>
+                        <div class="ejemplo" style="margin-top: 15px;">
+                            <div class="ejemplo-titulo">Ejemplo:</div>
+                            <p>Necesidad de socorro por situación de desamparo en la <strong>omisión de socorro</strong></p>
+                        </div>
+                    </div>
+                    
+                    <div class="elementos-tipo">
+                        <p style="margin-bottom: 15px;">
+                            <span class="elemento-numero">b</span>
+                            <strong style="font-size: 1.15em; color: #667eea;">Ausencia de una conducta determinada</strong>
+                        </p>
+                        <ul class="lista-puntos">
+                            <li>El SA <strong>NO realiza la conducta ordenada</strong> por la norma</li>
+                            <li>El SA realiza una <strong>conducta positiva distinta</strong> a la ordenada</li>
+                        </ul>
+                        <div class="ejemplo" style="margin-top: 15px;">
+                            <div class="ejemplo-titulo">Ejemplo:</div>
+                            <p>No socorrer o auxiliar a la persona en peligro de perecer (omisión de socorro)</p>
+                        </div>
+                        <div class="importante" style="margin-top: 15px;">
+                            <div class="importante-titulo">🔍 Comprobación</div>
+                            <p>Se realiza mediante la comparación entre:</p>
+                            <ul style="margin-top: 8px;">
+                                <li>✓ La conducta que realizó el obligado</li>
+                                <li>✓ La que requiere el cumplimiento del deber de actuar</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="elementos-tipo">
+                        <p style="margin-bottom: 15px;">
+                            <span class="elemento-numero">c</span>
+                            <strong style="font-size: 1.15em; color: #667eea;">Capacidad de realizar esa conducta</strong>
+                        </p>
+                        <ul class="lista-puntos">
+                            <li>El SA debe tener la <strong>posibilidad efectiva y real</strong> de realizar la conducta ordenada</li>
+                            <li>En el caso concreto</li>
+                            <li>A partir de consideraciones objetivas</li>
+                            <li>Debe tener la <strong>fuerza física y capacidad técnica</strong> para realizar la conducta debida</li>
+                        </ul>
+                        <div class="importante" style="margin-top: 15px; background: #fff3cd;">
+                            <div class="importante-titulo" style="color: #f57f17;">⚖️ Principio Fundamental</div>
+                            <p style="font-weight: 600;">A LO IMPOSIBLE NADIE ESTÁ OBLIGADO</p>
+                            <p style="margin-top: 8px;">Si el comportamiento distinto a lo ordenado por la norma es imposible, es <strong>ATÍPICO</strong></p>
+                        </div>
+                        <div class="ejemplo" style="margin-top: 15px;">
+                            <div class="ejemplo-titulo">Ejemplo:</div>
+                            <p>En la <strong>omisión de socorro</strong>, el SA sólo está obligado a actuar cuando puede socorrer o auxiliar a la víctima <strong>sin detrimento propio</strong></p>
+                        </div>
+                        
+                        <div class="concepto-clave" style="margin-top: 20px;">
+                            <div class="concepto-titulo">👤 BAREMO: El Hombre Medio</div>
+                            <p style="margin-bottom: 12px;">
+                                La capacidad de realizar la conducta debida debe medirse de acuerdo a:
+                            </p>
+                            <ul class="lista-puntos">
+                                <li>✓ Un <strong>hombre normal</strong></li>
+                                <li>✓ <strong>Situado en la posición del autor</strong></li>
+                                <li>✓ Con sus conocimientos y los de la situación concreta, como base para advertir:</li>
+                            </ul>
+                            <ol style="margin-left: 40px; margin-top: 10px;">
+                                <li>La situación típica</li>
+                                <li>El deber de actuar</li>
+                                <li>El poder actuar con las fuerzas físicas y mentales de una persona normal</li>
+                            </ol>
+                            
+                            <div class="comparacion" style="margin-top: 20px;">
+                                <div style="background: #e8f5e9; padding: 15px; border-radius: 8px;">
+                                    <strong style="color: #2e7d32;">✓ FACULTADES SUPERIORES</strong>
+                                    <p style="margin-top: 8px;">Hay que considerar las que pueda disponer voluntariamente el sujeto</p>
+                                </div>
+                                <div style="background: #ffebee; padding: 15px; border-radius: 8px;">
+                                    <strong style="color: #c62828;">⚠️ FACULTADES INFERIORES</strong>
+                                    <p style="margin-top: 8px;">Hay que imputar sólo las imaginables en una persona normal, pero NO las que se encuentran por debajo de esa normalidad</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="elementos-tipo">
+                        <p style="margin-bottom: 15px;">
+                            <span class="elemento-numero">d</span>
+                            <strong style="font-size: 1.15em; color: #667eea;">Infracción de un deber de cuidado (en delitos imprudentes)</strong>
+                        </p>
+                        <p style="background: #fff9e6; padding: 15px; border-radius: 8px; border-left: 4px solid #ff9800;">
+                            En los <strong>delitos imprudentes</strong>, el tipo objetivo requiere además la <strong>infracción de un deber de cuidado</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 6: OMISIÓN PROPIA - TIPO SUBJETIVO -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🧠</span>
+                    OMISIÓN PROPIA: TIPO SUBJETIVO
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">💭 TIPO SUBJETIVO DOLOSO</div>
+                        <div class="definicion">
+                            <strong>Elemento cognoscitivo:</strong> El sujeto NO realiza la conducta exigida por la norma, <strong>conociendo los elementos de la conducta típica</strong> del delito de omisión propia
+                        </div>
+                    </div>
+                    
+                    <div class="esquema">
+                        <div class="esquema-titulo">🎯 El conocimiento debe abarcar:</div>
+                        <div class="categorias-grid" style="grid-template-columns: repeat(3, 1fr);">
+                            <div class="categoria-card" style="background: linear-gradient(135deg, #ff6b6b, #ee5a6f);">
+                                Situación típica
+                            </div>
+                            <div class="categoria-card" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                                Ausencia de conducta debida
+                            </div>
+                            <div class="categoria-card" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">
+                                Capacidad de realizar la conducta
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 25px;">
+                        <div class="concepto-titulo">⚠️ TIPO SUBJETIVO IMPRUDENTE</div>
+                        
+                        <div class="comparacion" style="margin-top: 15px;">
+                            <div class="box-comparacion" style="background: #fff3cd; border: 3px solid #ff9800;">
+                                <div class="box-titulo" style="color: #e65100;">🟡 IMPRUDENCIA CONSCIENTE</div>
+                                <ul class="lista-puntos" style="margin-top: 10px;">
+                                    <li>El sujeto <strong>conoce de manera imperfecta</strong> el riesgo inherente a la conducta típica</li>
+                                    <li>Se equivoca (<strong>error de tipo vencible</strong>) en:</li>
+                                </ul>
+                                <ul style="margin-left: 40px; margin-top: 8px;">
+                                    <li>→ La entidad del riesgo</li>
+                                    <li>→ Su capacidad de evitación</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="box-comparacion" style="background: #ffebee; border: 3px solid #f44336;">
+                                <div class="box-titulo" style="color: #c62828;">🔴 IMPRUDENCIA INCONSCIENTE</div>
+                                <ul class="lista-puntos" style="margin-top: 10px;">
+                                    <li>El riesgo es <strong>cognoscible</strong></li>
+                                    <li>El sujeto está <strong>obligado a conocer</strong></li>
+                                    <li>El sujeto <strong>desconoce el riesgo</strong></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="caso-practico">
+                        <div class="caso-titulo">⚖️ Ejemplo Legal: Tipo de Omisión Propia Imprudente</div>
+                        <p style="background: white; padding: 15px; border-radius: 8px; margin-top: 10px;">
+                            <strong>Art. 494 CP</strong> - Sufrirán la pena de multa de 1 a 4 UTM:
+                        </p>
+                        <p style="margin-top: 12px; padding-left: 15px; border-left: 4px solid #4caf50;">
+                            <strong>N° 10.</strong> El médico, cirujano, farmacéutico, dentista o matrona que incurriere en <strong>descuido culpable</strong> en el desempeño de su profesión, <strong>sin causar daño a las personas</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 7: OMISIÓN IMPROPIA - GENERALIDADES -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">📕</span>
+                    OMISIÓN IMPROPIA O COMISIÓN POR OMISIÓN
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">📌 Concepto</div>
+                        <div class="definicion">
+                            También son llamados <strong>de comisión por omisión</strong>. Son aquellos <strong>NO regulados expresamente en la ley</strong>. Se construyen interpretativamente a partir de un tipo redactado en términos activos.
+                        </div>
+                        <p style="margin-top: 15px; font-size: 1.05em;">
+                            La omisión de la conducta jurídicamente debida y posible es <strong>equiparable a la realización activa</strong> del tipo penal respectivo.
+                        </p>
+                    </div>
+                    
+                    <div class="importante">
+                        <div class="importante-titulo">⚖️ Regulación en el Código Penal Chileno</div>
+                        <p style="margin-bottom: 12px;"><strong>Art. 1° CP:</strong></p>
+                        <p style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                            Los delitos, sean crímenes, simples delitos o faltas, <strong>pueden ser cometidos por acción o por omisión</strong>.
+                        </p>
+                        <p style="margin-bottom: 12px;"><strong>Art. 2° CP:</strong></p>
+                        <p style="background: white; padding: 15px; border-radius: 8px;">
+                            Las omisiones pueden ser <strong>dolosas o imprudentes</strong>.
+                        </p>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 20px;">
+                        <div class="concepto-titulo">🏛️ CONSTITUCIONALIDAD DE LA OMISIÓN IMPROPIA</div>
+                        <p style="margin-bottom: 15px;">La comisión por omisión procede en:</p>
+                        <ul class="lista-puntos">
+                            <li>✓ Los tipos de <strong>RESULTADO</strong></li>
+                            <li>✓ De <strong>MEDIOS ABIERTOS</strong></li>
+                        </ul>
+                        <div class="importante" style="margin-top: 15px;">
+                            <div class="importante-titulo">⚠️ Discusión: ¿Atenta contra el principio de legalidad?</div>
+                            <p>Se discute la admisión de la omisión impropia porque:</p>
+                            <ul style="margin-top: 10px;">
+                                <li>→ La ley se limita a establecer la prohibición</li>
+                                <li>→ Sin restringir el tipo de conducta mediante la que debe lograrse el resultado típico</li>
+                                <li>→ La conducta omisiva NO es señalada expresamente en la ley</li>
+                                <li>→ Hay que desprenderla del verbo rector utilizado</li>
+                            </ul>
+                            <p style="margin-top: 12px; font-weight: 600; color: #d32f2f;">
+                                ❓ ¿Atenta contra el principio de <em>lex certa</em>? (Art. 19 N° 3 CPR)
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="ejemplo">
+                        <div class="ejemplo-titulo">📋 Ejemplo Paradigmático: El Homicidio</div>
+                        <p style="margin-bottom: 12px;">
+                            En el homicidio, el verbo <strong>"matar"</strong> dice relación con el resultado fatal. El legislador NO indica la forma mediante la que el SA debe conseguir la muerte de la víctima, con tal que se trate de un medio idóneo.
+                        </p>
+                        <p style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-left: 4px solid #2196f3; margin-top: 10px;">
+                            <strong>El homicidio es un tipo de resultado y de medios abiertos</strong>, por lo que puede cometerse por cualquier medio apto para provocar el resultado (<strong>también por medios omisivos</strong>).
+                        </p>
+                    </div>
+                    
+                    <div class="caso-practico">
+                        <div class="caso-titulo">⚖️ Fundamento Legal: Art. 492 CP</div>
+                        <p style="background: white; padding: 15px; border-radius: 8px; margin-top: 10px; font-style: italic;">
+                            "Las penas del art. 490 se impondrán al que…, <strong>ejecutare un hecho o incurriere en una omisión</strong> que, a mediar malicia, constituiría un crimen o un simple delito <strong>contra las personas</strong>"
+                        </p>
+                        <p style="margin-top: 15px; font-weight: 600; color: #2e7d32;">
+                            ✓ Este artículo reconoce que los delitos contra la vida y la salud pueden realizarse por omisión, a pesar de estar redactados en términos activos.
+                        </p>
+                    </div>
+                    
+                    <div class="importante">
+                        <div class="importante-titulo">📚 Interpretación del verbo "matar"</div>
+                        <ul class="lista-puntos">
+                            <li>Debe entenderse en un <strong>sentido social y normativo</strong></li>
+                            <li>Como <strong>fórmula de atribución de responsabilidad</strong>, NO como fenómeno naturalístico</li>
+                            <li>El art. 1º CP define el delito como acción u omisión, por lo que es posible, en la PE del CP, <strong>matar por omisión</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 20px;">
+                        <div class="concepto-titulo">🎯 Criterios Normativos de la Omisión Impropia</div>
+                        <p style="margin-bottom: 12px;">La omisión impropia:</p>
+                        <ul class="lista-puntos">
+                            <li>Fluye directamente de cada tipo penal de resultado y de medios abiertos</li>
+                            <li>Se interpreta como <strong>enunciado atributivo de responsabilidad penal</strong></li>
+                            <li>NO como mera forma descriptiva</li>
+                            <li>La responsabilidad se atribuye conforme a los <strong>criterios normativos</strong> que la doctrina ha desarrollado para dar relevancia a la omisión impropia</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 8: OMISIÓN IMPROPIA - TIPO OBJETIVO -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🎯</span>
+                    OMISIÓN IMPROPIA: TIPO OBJETIVO
+                </div>
+                <div class="contenido">
+                    <div class="importante">
+                        <div class="importante-titulo">📊 Estructura del Comportamiento Típico</div>
+                        <p style="margin-bottom: 12px;">
+                            El comportamiento típico tiene la <strong>misma estructura que el de omisión propia</strong>, pero como delito de resultado, debe ser completado con los elementos de la <strong>imputación objetiva del hecho</strong>:
+                        </p>
+                    </div>
+                    
+                    <div class="esquema">
+                        <div class="esquema-titulo">🔢 6 ELEMENTOS DEL TIPO OBJETIVO</div>
+                        <div style="background: linear-gradient(to right, #667eea, #764ba2); color: white; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                            <ol style="font-size: 1.1em; font-weight: 600; line-height: 2;">
+                                <li>a) Situación típica</li>
+                                <li>b) Ausencia de una conducta determinada</li>
+                                <li>c) Capacidad de realizar esa conducta</li>
+                                <li style="color: #ffd700;">d) <strong>POSICIÓN DE GARANTE</strong> ⭐</li>
+                                <li>e) Producción de un resultado</li>
+                                <li>f) Posibilidad de evitarlo</li>
+                            </ol>
+                        </div>
+                        <p style="text-align: center; font-weight: 600; color: #667eea; margin-top: 10px;">
+                            ⚠️ Los primeros 3 elementos son idénticos a la omisión propia
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 9: POSICIÓN DE GARANTE -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">⭐</span>
+                    LA POSICIÓN DE GARANTE (Elemento Central)
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">📌 Concepto Fundamental</div>
+                        <div class="definicion">
+                            El <strong>no impedir un resultado</strong> es normativamente equivalente a causarlo cuando existe para el sujeto la <strong>obligación jurídica de actuar</strong>, y por ello es legítimo contar con ella.
+                        </div>
+                    </div>
+                    
+                    <div class="importante">
+                        <div class="importante-titulo">⚖️ Fuentes de la Posición de Garante</div>
+                        <ul class="lista-puntos">
+                            <li>❌ NO están descritas en la ley</li>
+                            <li>✓ Se desprenden del ordenamiento jurídico</li>
+                            <li>✓ El juez <strong>NO crea Derecho</strong>, sino que <strong>lo reconoce</strong></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 25px;">
+                        <div class="concepto-titulo">📚 DOS TEORÍAS SOBRE LA POSICIÓN DE GARANTE</div>
+                    </div>
+                    
+                    <div class="comparacion">
+                        <div class="box-comparacion" style="background: #e1f5fe; border: 3px solid #0288d1;">
+                            <div class="box-titulo" style="color: #01579b;">📋 TEORÍA FORMAL DEL DEBER JURÍDICO</div>
+                            <p style="margin: 10px 0; font-weight: 600;">
+                                Determina las fuentes atendiendo a la teoría de las fuentes formales
+                            </p>
+                            <p style="margin-bottom: 8px; font-weight: 600;">Son fuentes de la posición de garante:</p>
+                            <ul style="margin-left: 20px;">
+                                <li><strong>1. LA LEY</strong></li>
+                                <li><strong>2. EL CONTRATO</strong></li>
+                                <li><strong>3. EL HACER PRECEDENTE</strong> (injerencia)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="box-comparacion" style="background: #f3e5f5; border: 3px solid #8e24aa;">
+                            <div class="box-titulo" style="color: #6a1b9a;">🎯 TEORÍA DE LAS FUNCIONES (Armin Kaufmann)</div>
+                            <p style="margin: 10px 0; font-weight: 600;">
+                                La posición de garante se fundamenta en la <strong>relación funcional materialmente existente</strong> entre el sujeto y el bien jurídico
+                            </p>
+                            <p style="margin-top: 12px; padding: 10px; background: white; border-radius: 6px; font-weight: 600; color: #8e24aa;">
+                                ✓ Es la teoría dominante actualmente
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="caso-practico">
+                        <div class="caso-titulo">🤔 Caso Práctico: Crítica a la Teoría Formal</div>
+                        <p style="margin-bottom: 10px;">
+                            <strong>Situación:</strong> A y B están casados. A se encuentra separado de hecho hace 20 años de B. A NO auxilia a B pudiendo hacerlo. B muere.
+                        </p>
+                        <p style="background: white; padding: 15px; border-radius: 8px; margin-top: 10px; font-weight: 600; color: #d32f2f;">
+                            ❓ ¿Es responsable A del delito de parricidio u homicidio (según como se opine) en comisión por omisión?
+                        </p>
+                        <p style="margin-top: 12px; padding: 12px; background: #fff3cd; border-radius: 8px; border-left: 4px solid #ff9800;">
+                            <strong>Según la teoría formal:</strong> SÍ, porque la ley (matrimonio) establece el deber<br>
+                            <strong>Según la teoría de las funciones:</strong> NO, porque no existe relación funcional material tras 20 años de separación
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 10: FUENTES SEGÚN KAUFMANN -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🏛️</span>
+                    FUENTES DE LA POSICIÓN DE GARANTE (Teoría de Kaufmann)
+                </div>
+                <div class="contenido">
+                    <div class="esquema">
+                        <div class="esquema-titulo">🎯 ESTRUCTURA DE LAS FUNCIONES</div>
+                        <div class="categorias-grid">
+                            <div class="categoria-card" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                                <div style="font-size: 1.3em; margin-bottom: 10px;">🛡️</div>
+                                <strong>GARANTES DE PROTECCIÓN</strong><br>
+                                <small style="font-size: 0.85em; opacity: 0.9;">(Función de protección de un bien jurídico)</small>
+                            </div>
+                            <div class="categoria-card" style="background: linear-gradient(135deg, #fa709a, #fee140);">
+                                <div style="font-size: 1.3em; margin-bottom: 10px;">⚠️</div>
+                                <strong>GARANTES DE VIGILANCIA</strong><br>
+                                <small style="font-size: 0.85em; opacity: 0.9;">(Deber de control de una fuente de peligro)</small>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 30px;">
+                        <div class="concepto-titulo">🛡️ a) FUNCIÓN DE PROTECCIÓN DE UN BIEN JURÍDICO</div>
+                        <p style="margin-bottom: 15px; font-size: 1.05em;">
+                            Son situaciones en que una relación familiar o social o una conducta voluntaria, somete a un bien jurídico a la <strong>dependencia de un sujeto</strong> que se hace responsable (garante) del mismo.
+                        </p>
+                    </div>
+                    
+                    <div class="fuentes-garante">
+                        <div class="fuente-titulo">👨‍👩‍👧 1. Existencia de una estrecha relación familiar</div>
+                        <ul class="lista-puntos">
+                            <li>Abarca las relaciones familiares más próximas que implican <strong>dependencia absoluta, existencial y asumida</strong></li>
+                            <li>Ejemplo clásico: La protección que los padres deben a sus hijos recién nacidos hasta que puedan valerse por sí mismos</li>
+                        </ul>
+                        <div class="ejemplo" style="margin-top: 12px;">
+                            <div class="ejemplo-titulo">Ejemplo:</div>
+                            <p><strong>Madre que deja morir a su hijo recién nacido</strong> → Posición de garante</p>
+                        </div>
+                        <div class="importante" style="margin-top: 15px;">
+                            <div class="importante-titulo">⚠️ Importante: La dependencia debe ser asumida</div>
+                            <ul style="margin-top: 8px;">
+                                <li>Si el recién nacido está a cargo del facultativo (médico), NO concurre posición de garante respecto de la madre que desatiende a su hijo, aunque hubiera podido evitar su muerte</li>
+                                <li>Más allá de estos supuestos es discutible la existencia de una posición de garante</li>
+                                <li><strong>Regla:</strong> En caso de duda, hay que NEGAR la presencia de una posición de garante</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="fuentes-garante">
+                        <div class="fuente-titulo">⛰️ 2. Comunidad de peligro</div>
+                        <div class="definicion" style="margin-top: 10px;">
+                            Consiste en la participación <strong>voluntaria</strong> en una actividad peligrosa en que intervienen varias personas <strong>tácitamente obligadas a socorrerse entre sí</strong>.
+                        </div>
+                        <div class="ejemplo" style="margin-top: 15px;">
+                            <div class="ejemplo-titulo">Ejemplo 1: Expedición alpina</div>
+                            <p>
+                                Participan 3 compañeros en un mismo nivel y condiciones. Si uno de los partícipes sufre un accidente relacionado con el riesgo de la actividad compartida, están en <strong>posición de garante</strong> los demás.
+                            </p>
+                        </div>
+                        <div class="ejemplo">
+                            <div class="ejemplo-titulo">Ejemplo 2: Excursión turística al volcán Pucón</div>
+                            <p>
+                                Varios turistas inexpertos contratan una excursión y la empresa turística pone un guía experto. La primera obligación de custodia recae en quien está confiada la excursión (<strong>el guía</strong>).
+                            </p>
+                        </div>
+                        <div class="concepto-clave" style="margin-top: 15px; background: #e3f2fd;">
+                            <div class="concepto-titulo" style="color: #1976d2;">📚 Fundamento de la comunidad de peligro:</div>
+                            <ul class="lista-puntos">
+                                <li>Se asume el peligro de la actividad</li>
+                                <li>Con la <strong>confianza</strong> de que es posible contar con la ayuda de los demás intervinientes</li>
+                                <li>La excursión no la haría solo, por lo que hay una <strong>asunción voluntaria implícita</strong> de la función de protección</li>
+                            </ul>
+                        </div>
+                        <div class="importante" style="margin-top: 12px;">
+                            <div class="importante-titulo">⚠️ NO hay posición de garante:</div>
+                            <p>En una comunidad de peligro <strong>NO elegida voluntariamente</strong> (Ej.: Un terremoto)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="fuentes-garante">
+                        <div class="fuente-titulo">🤝 3. Asunción voluntaria de una función de protección</div>
+                        <p style="margin: 10px 0;">
+                            Concurre en quien asume la protección voluntaria del sujeto u objeto protegido, <strong>llevándolo a una situación de dependencia</strong>.
+                        </p>
+                        <p style="background: #e8f5e9; padding: 15px; border-radius: 8px; border-left: 4px solid #4caf50; margin-top: 12px;">
+                            <strong>Razón:</strong> Al confiar en quien ofrece voluntariamente su protección, la víctima se atreve a correr mayores riesgos o deja de tomar otras precauciones.
+                        </p>
+                        <div class="importante" style="margin-top: 15px;">
+                            <div class="importante-titulo">⚖️ Importante: NO se agrava la situación del salvador</div>
+                            <ul style="margin-top: 8px;">
+                                <li>NO se puede agravar penalmente la situación de quien sólo inicia el auxilio de otro</li>
+                                <li>Si ello NO aumenta el peligro</li>
+                                <li>NI disminuye las posibilidades de que operen otras ayudas</li>
+                                <li><strong>Lo importante:</strong> Que el interviniente NO haga imposible otra clase de auxilio eficaz</li>
+                            </ul>
+                        </div>
+                        <p style="margin-top: 12px; font-weight: 600; color: #667eea;">
+                            💡 <strong>Nota:</strong> Parte de la doctrina prefiere acudir al contrato, pero su existencia formal NO es siempre necesaria NI suficiente para establecer la equivalencia real. Lo decisivo es la <strong>asunción voluntaria del riesgo</strong>.
+                        </p>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 30px;">
+                        <div class="concepto-titulo">⚠️ b) DEBER DE CONTROL DE UNA FUENTE DE PELIGRO (Garantes de Vigilancia)</div>
+                        <div class="definicion" style="margin-top: 10px;">
+                            La indemnidad del bien jurídico depende del <strong>control de una fuente de peligro</strong> por quien la ha creado o a quien se ha atribuido su vigilancia.
+                        </div>
+                    </div>
+                    
+                    <div class="fuentes-garante" style="background: #fff3e0; border-left-color: #ff6f00;">
+                        <div class="fuente-titulo" style="color: #e65100;">🔴 1. Actuar precedente o injerencia</div>
+                        <div class="definicion" style="margin-top: 10px; background: white;">
+                            Quien con una <strong>conducta antinormativa precedente</strong> provoca una situación de peligro para un bien jurídico, está obligado a evitar que el peligro se convierta en lesión, a riesgo de ser sancionado como si hubiese cometido positivamente un delito doloso.
+                        </div>
+                        <div class="ejemplo" style="margin-top: 15px;">
+                            <div class="ejemplo-titulo">Ejemplo clásico:</div>
+                            <ul class="lista-puntos">
+                                <li>A lesiona <strong>dolosamente</strong> a B quien queda mal herido</li>
+                                <li>A huye del lugar sin socorrer a B</li>
+                                <li>A tiene conciencia de que posiblemente B muera</li>
+                                <li><strong>Resultado:</strong> Habría provocado voluntariamente la muerte de la víctima → <strong>Homicidio doloso</strong></li>
+                            </ul>
+                        </div>
+                        <p style="margin-top: 15px; padding: 15px; background: #e3f2fd; border-radius: 8px; font-weight: 600;">
+                            ✓ Hace equiparable la omisión de un deber de actuar a la causación positiva del tipo de comisión
+                        </p>
+                        
+                        <div class="importante" style="margin-top: 20px;">
+                            <div class="importante-titulo">⚠️ REQUISITO: Conducta antinormativa precedente</div>
+                            <p style="margin-bottom: 12px;">
+                                La posición de garante requiere que concurra una <strong>creación o aumento del riesgo jurídicamente desaprobado</strong> atribuible a su autor.
+                            </p>
+                            <div class="caso-practico">
+                                <div class="caso-titulo">Caso: Conductor prudente y suicida</div>
+                                <p>
+                                    Un conductor que circulaba <strong>con prudencia</strong> atropella a un suicida que se echa de forma imprevista bajo las ruedas de su vehículo. Temeroso de las posibles complicaciones, abandona al herido en la carretera.
+                                </p>
+                                <p style="margin-top: 12px; padding: 12px; background: white; border-radius: 8px; border-left: 4px solid #2196f3;">
+                                    <strong>Análisis:</strong>
+                                </p>
+                                <ul class="lista-puntos" style="margin-top: 8px;">
+                                    <li>❌ El accidente NO es atribuible a dolo ni a imprudencia del conductor</li>
+                                    <li>❌ La posterior huida voluntaria NO convierte en dolosa la causación de las lesiones ni la muerte</li>
+                                    <li>✓ Pero responderá de un <strong>delito distinto</strong> por la fase omisiva y dolosa (Art. 195 Ley de Tránsito)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="importante" style="margin-top: 20px; background: #fce4ec;">
+                            <div class="importante-titulo" style="color: #c2185b;">🔍 Casos especiales: Falta de antijuridicidad</div>
+                            <p style="margin-bottom: 12px;"><strong>Hay que distinguir dos grupos de casos:</strong></p>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px; margin-bottom: 12px;">
+                                <p style="font-weight: 600; margin-bottom: 8px;">1️⃣ Comportamiento anterior impuesto por otra persona</p>
+                                <p>El sujeto activo actúa en <strong>legítima defensa</strong> o en <strong>estado de necesidad</strong>, luego NO socorre a su agresor una vez herido.</p>
+                                <p style="margin-top: 8px; color: #c2185b; font-weight: 600;">→ NO hay posición de garante</p>
+                            </div>
+                            
+                            <div style="background: white; padding: 15px; border-radius: 8px;">
+                                <p style="font-weight: 600; margin-bottom: 8px;">2️⃣ Falta de antijuridicidad pero carácter voluntariamente buscado</p>
+                                <div class="ejemplo" style="margin-top: 10px;">
+                                    <div class="ejemplo-titulo">Ejemplo: El anfitrión y el invitado ebrio</div>
+                                    <p>
+                                        Un anfitrión sirve alcohol a su invitado hasta que se encuentra ebrio e incapacitado para conducir. ¿Es responsable el anfitrión del accidente que se produzca por no haberle impedido tomar el volante?
+                                    </p>
+                                    <p style="margin-top: 10px; font-weight: 600; color: #2e7d32;">
+                                        ✓ Opera el <strong>principio de la autoresponsabilidad</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fuentes-garante" style="background: #e8eaf6; border-left-color: #5e35b1;">
+                        <div class="fuente-titulo" style="color: #4527a0;">🏭 2. Deber de control de fuentes de peligro en el propio ámbito de dominio</div>
+                        <p style="margin: 10px 0;">
+                            Quien posee en su esfera de dominio una <strong>fuente de peligro</strong> para bienes jurídicos (instalaciones, animales, máquinas) es responsable de que tal peligro no se realice.
+                        </p>
+                        <div class="ejemplo" style="margin-top: 15px;">
+                            <div class="ejemplo-titulo">Ejemplo 1: El conductor</div>
+                            <p>
+                                Un conductor de un vehículo, en circunstancias normales y pudiendo hacerlo, tiene que frenar cuando se le cruza un peatón. Si omite hacerlo, la muerte del peatón atropellado le será atribuible, aunque pruebe que desde que vio al peatón <strong>"no hizo nada"</strong>, salvo dejar que el vehículo siguiera su curso.
+                            </p>
+                        </div>
+                        <div class="ejemplo">
+                            <div class="ejemplo-titulo">Ejemplo 2: El cuidador del zoológico</div>
+                            <p>
+                                Si quien tiene a su cargo el león del zoológico omite cerrar la puerta de su jaula, es autor de <strong>homicidio</strong> (doloso o imprudente) si el león se escapa y da muerte a un visitante.
+                            </p>
+                        </div>
+                        
+                        <div class="importante" style="margin-top: 15px;">
+                            <div class="importante-titulo">⚠️ Caso discutible: Ámbito no peligroso</div>
+                            <div class="caso-practico">
+                                <div class="caso-titulo">Caso del bar</div>
+                                <p>
+                                    El Tribunal Federal alemán consideró al encargado de un bar en posición de garante y responsable de las lesiones causadas por un cliente a otro, si NO las impidió pudiendo hacerlo.
+                                </p>
+                                <p style="margin-top: 10px; font-weight: 600; color: #d32f2f;">
+                                    ❓ Es discutible que exista un deber de policía que haga responsable al encargado del bar por los delitos cometidos por otras personas
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="fuentes-garante" style="background: #e0f2f1; border-left-color: #00897b;">
+                        <div class="fuente-titulo" style="color: #00695c;">👨‍👩‍👧‍👦 3. Responsabilidad por las conductas de otras personas</div>
+                        <p style="margin: 10px 0;">
+                            Quienes tienen el <strong>deber de vigilar a otras personas</strong>, se hallan en posición de garante respecto de los males que éstas puedan causar.
+                        </p>
+                        <div class="ejemplo" style="margin-top: 12px;">
+                            <div class="ejemplo-titulo">Ejemplo principal:</div>
+                            <p><strong>Deber de vigilancia de los hijos menores</strong> por parte de sus padres</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 11: PRODUCCIÓN DEL RESULTADO Y POSIBILIDAD DE EVITARLO -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">💥</span>
+                    RESULTADO Y POSIBILIDAD DE EVITARLO
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">e) PRODUCCIÓN DE UN RESULTADO</div>
+                        <div class="definicion">
+                            Los delitos de comisión por omisión son <strong>tipos de resultado</strong>. El delito consumado requiere que concurra un <strong>resultado material</strong>.
+                        </div>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 25px;">
+                        <div class="concepto-titulo">f) QUE EL AUTOR HUBIESE PODIDO EVITAR EL RESULTADO</div>
+                        <p style="margin-bottom: 15px;">
+                            Falta cuando la conducta indicada no sirve para evitar el resultado, porque éste igual se iba a producir.
+                        </p>
+                        <p style="background: #fff3cd; padding: 15px; border-radius: 8px; border-left: 4px solid #ff9800; margin-bottom: 15px;">
+                            ⚠️ Hay que hacer un <strong>juicio hipotético</strong> sometido a un margen de error
+                        </p>
+                    </div>
+                    
+                    <div class="importante">
+                        <div class="importante-titulo">📊 PARÁMETRO (Baremo):</div>
+                        <div style="background: white; padding: 20px; border-radius: 10px; margin-top: 12px; border: 3px solid #667eea;">
+                            <p style="font-size: 1.1em; font-weight: 600; color: #667eea; margin-bottom: 12px;">
+                                La realización de la conducta debida hubiese evitado el resultado con una <strong>"PROBABILIDAD RAYANA EN LA SEGURIDAD"</strong>
+                            </p>
+                            <p style="margin-top: 15px;">
+                                La imputación objetiva del resultado requiere que el riesgo creado se realice efectivamente en el resultado.
+                            </p>
+                            <p style="margin-top: 10px; font-weight: 600; color: #2e7d32;">
+                                ✓ Ello sólo puede afirmarse si: <em>Ex post</em> se comprueba que el resultado se habría evitado con una "probabilidad rayana en la seguridad" mediante la intervención omitida.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 12: TIPO SUBJETIVO OMISIÓN IMPROPIA -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🧠</span>
+                    TIPO SUBJETIVO EN LA OMISIÓN IMPROPIA
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">💭 EL DOLO EN LA OMISIÓN IMPROPIA</div>
+                        <p style="margin-bottom: 15px; font-size: 1.05em;">
+                            El <strong>conocimiento debe abarcar</strong>:
+                        </p>
+                    </div>
+                    
+                    <div class="esquema">
+                        <div class="esquema-titulo">🎯 4 ELEMENTOS QUE DEBE CONOCER EL AUTOR</div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
+                            <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                                <div style="font-size: 2em; margin-bottom: 10px;">⚠️</div>
+                                <strong>La situación de peligro para el bien jurídico</strong>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #f093fb, #f5576c); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                                <div style="font-size: 2em; margin-bottom: 10px;">❌</div>
+                                <strong>La ausencia de la conducta debida</strong>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #4facfe, #00f2fe); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                                <div style="font-size: 2em; margin-bottom: 10px;">✅</div>
+                                <strong>Posibilidad de realizarla</strong>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; padding: 20px; border-radius: 12px; text-align: center;">
+                                <div style="font-size: 2em; margin-bottom: 10px;">⭐</div>
+                                <strong>La situación que determina la posición de garante</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 13: MAPA CONCEPTUAL FINAL -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🗺️</span>
+                    MAPA CONCEPTUAL COMPLETO
+                </div>
+                <div class="contenido">
+                    <div class="esquema">
+                        <div class="esquema-titulo">📚 ESTRUCTURA GENERAL DEL MÓDULO 1</div>
+                        
+                        <div style="background: linear-gradient(135deg, #667eea15, #764ba215); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #667eea; margin-bottom: 15px; font-size: 1.1em;">
+                                1. CONCEPTOS FUNDAMENTALES
+                            </div>
+                            <ul class="lista-puntos">
+                                <li>Concepto de delito omisivo</li>
+                                <li>Distinción entre acción y omisión</li>
+                                <li>Distinción en casos límites</li>
+                                <li>Ubicación sistemática</li>
+                                <li>Aspecto común a la acción y a la omisión</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #4facfe15, #00f2fe15); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #2196f3; margin-bottom: 15px; font-size: 1.1em;">
+                                2. OMISIÓN PROPIA
+                            </div>
+                            <ul class="lista-puntos">
+                                <li><strong>Tipo objetivo:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>a) Situación típica</li>
+                                        <li>b) Ausencia de una conducta determinada</li>
+                                        <li>c) Capacidad de realizar esa conducta</li>
+                                        <li>d) Infracción de deber de cuidado (imprudentes)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Tipo subjetivo:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Tipo subjetivo doloso</li>
+                                        <li>Tipo subjetivo imprudente</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #fa709a15, #fee14015); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #e91e63; margin-bottom: 15px; font-size: 1.1em;">
+                                3. OMISIÓN IMPROPIA (Comisión por omisión)
+                            </div>
+                            <ul class="lista-puntos">
+                                <li>Concepto y regulación en el CP chileno</li>
+                                <li>Constitucionalidad</li>
+                                <li><strong>Tipo objetivo:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>a) Situación típica</li>
+                                        <li>b) Ausencia de conducta determinada</li>
+                                        <li>c) Capacidad de realizar esa conducta</li>
+                                        <li><strong>d) POSICIÓN DE GARANTE ⭐</strong></li>
+                                        <li>e) Producción de un resultado</li>
+                                        <li>f) Posibilidad de evitarlo</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Tipo subjetivo:</strong> El dolo</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #43e97b15, #38f9d715); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #4caf50; margin-bottom: 15px; font-size: 1.1em;">
+                                4. TEORÍAS DE LA POSICIÓN DE GARANTE
+                            </div>
+                            <ul class="lista-puntos">
+                                <li><strong>Teoría formal del deber jurídico:</strong> Ley, contrato, injerencia</li>
+                                <li><strong>Teoría de las funciones (Kaufmann):</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>🛡️ <strong>Garantes de protección:</strong>
+                                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                                <li>Relación familiar</li>
+                                                <li>Comunidad de peligro</li>
+                                                <li>Asunción voluntaria</li>
+                                            </ul>
+                                        </li>
+                                        <li>⚠️ <strong>Garantes de vigilancia:</strong>
+                                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                                <li>Actuar precedente (injerencia)</li>
+                                                <li>Control de fuentes de peligro</li>
+                                                <li>Responsabilidad por conductas de otros</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 14: ANTIJURIDICIDAD EN EL DELITO OMISIVO -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">⚖️</span>
+                    LA ANTIJURIDICIDAD EN EL DELITO OMISIVO
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">📌 Principio General</div>
+                        <div class="definicion">
+                            En los delitos de omisión, la <strong>tipicidad también es un indicio de antijuridicidad</strong> y también puede ser excluida si concurre una <strong>causa de justificación</strong>.
+                        </div>
+                        <p style="margin-top: 15px; font-size: 1.05em;">
+                            Es posible omitir en <strong>legítima defensa</strong> o en <strong>estado de necesidad</strong>.
+                        </p>
+                    </div>
+                    
+                    <div class="importante">
+                        <div class="importante-titulo">⚖️ Causal de Justificación: Art. 10 N° 12 CP</div>
+                        <p style="background: white; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                            <strong>"Están exentos de responsabilidad criminal:</strong><br>
+                            12° El que incurre en alguna omisión, <strong>hallándose impedido por causa legítima o insuperable</strong>."
+                        </p>
+                        <ul class="lista-puntos" style="margin-top: 15px;">
+                            <li>El SA realiza el tipo omisivo, pero su conducta está <strong>permitida por el ordenamiento jurídico</strong></li>
+                            <li>Es un correlato de la causa de justificación del N° 10 para los delitos de acción: <em>"El que obra en cumplimiento de un deber o en el ejercicio legítimo de un derecho, autoridad oficio o cargo"</em></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 25px;">
+                        <div class="concepto-titulo">⚔️ COLISIÓN DE DEBERES</div>
+                        <div class="definicion" style="margin-top: 10px;">
+                            Existe cuando diversos deberes a actuar jurídicamente fundamentados se dirigen a un destinatario de la norma pero éste <strong>sólo puede cumplir 1 a costa del otro</strong>, es decir, tiene necesariamente que lesionar 1 de ellos, sea como él se comporte.
+                        </div>
+                    </div>
+                    
+                    <div class="esquema" style="margin-top: 20px;">
+                        <div class="esquema-titulo">🎯 3 MODALIDADES DE COLISIÓN DE DEBERES</div>
+                        
+                        <div class="elementos-tipo">
+                            <p style="margin-bottom: 15px;">
+                                <span class="elemento-numero">a</span>
+                                <strong style="font-size: 1.15em; color: #667eea;">Colisión de deberes de actuar EQUIVALENTES en jerarquía</strong>
+                            </p>
+                            <div class="ejemplo">
+                                <div class="ejemplo-titulo">Ejemplo:</div>
+                                <p>
+                                    En una playa están aprendiendo a nadar un grupo de niños de corta edad. De improviso <strong>2 menores</strong> están en peligro de ahogarse y el salvavidas <strong>sólo puede acudir en auxilio de uno</strong> de ellos y dejar al otro librado a su suerte.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="elementos-tipo">
+                            <p style="margin-bottom: 15px;">
+                                <span class="elemento-numero">b</span>
+                                <strong style="font-size: 1.15em; color: #667eea;">Colisión de deberes de actuar NO EQUIVALENTES en jerarquía</strong>
+                            </p>
+                            <div class="ejemplo">
+                                <div class="ejemplo-titulo">Ejemplo:</div>
+                                <p>
+                                    En un edificio en llamas se encuentran en peligro de morir calcinados 3 menores, y la única persona adulta que puede auxiliarlos es el <strong>padre de uno de ellos</strong> –deber de protección versus deber de auxilio.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="elementos-tipo">
+                            <p style="margin-bottom: 15px;">
+                                <span class="elemento-numero">c</span>
+                                <strong style="font-size: 1.15em; color: #667eea;">Colisión entre un deber de actuar y un deber de omitir frente a bienes jurídicos equivalentes</strong>
+                            </p>
+                            <div class="ejemplo">
+                                <div class="ejemplo-titulo">Ejemplo:</div>
+                                <p>
+                                    El padre omite dar muerte a un náufrago para quitarle su salvavidas y proporcionárselo a su hijo que está en peligro de ahogarse.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="importante" style="margin-top: 25px;">
+                        <div class="importante-titulo">✅ Solución: El autor NO actúa de modo antijurídico cuando:</div>
+                        <ul class="lista-puntos">
+                            <li>En caso de deberes de <strong>distinto rango</strong>: Cumple el deber que posee el rango más alto a costa del deber de segundo rango</li>
+                            <li>En caso de deberes del <strong>mismo valor</strong>: Cumple con uno de ellos</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 20px;">
+                        <div class="concepto-titulo">📊 Criterios para determinar la jerarquía entre deberes:</div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
+                            <div style="background: #e3f2fd; padding: 15px; border-radius: 8px; border-left: 4px solid #2196f3;">
+                                <strong style="color: #1976d2;">1. Valor de los bienes en peligro</strong>
+                                <p style="margin-top: 8px; font-size: 0.95em;">Ej.: vida > salud > patrimonio</p>
+                            </div>
+                            <div style="background: #f3e5f5; padding: 15px; border-radius: 8px; border-left: 4px solid #9c27b0;">
+                                <strong style="color: #7b1fa2;">2. Posición jurídica del destinatario</strong>
+                                <p style="margin-top: 8px; font-size: 0.95em;">Posición de garante > mero deber de ayuda</p>
+                            </div>
+                            <div style="background: #fff3e0; padding: 15px; border-radius: 8px; border-left: 4px solid #ff9800;">
+                                <strong style="color: #e65100;">3. Cercanía del peligro</strong>
+                                <p style="margin-top: 8px; font-size: 0.95em;">Peligro inminente > peligro futuro</p>
+                            </div>
+                            <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; border-left: 4px solid #4caf50;">
+                                <strong style="color: #2e7d32;">4. Probabilidad del daño</strong>
+                                <p style="margin-top: 8px; font-size: 0.95em;">Mayor probabilidad > menor probabilidad</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="caso-practico" style="margin-top: 25px;">
+                        <div class="caso-titulo">🔥 Caso Práctico: La Casa en Llamas</div>
+                        <p style="margin-bottom: 15px;">
+                            <strong>Situación:</strong> A, quien se halla de regreso a casa de sus padres, encuentra está en llamas. A se percata que B, su hermano de 8 años, se halla detrás de una ventana del piso superior. Mientras tanto, su abuela G quien vive con ellos, se encuentra al otro lado de la casa, pero también en el piso superior, pedía ayuda. El fuego impide que B y G puedan huir. A se da cuenta que el ático amenaza con derrumbarse rápidamente y que <strong>solo le queda tiempo para salvar a uno de ellos</strong> con ayuda de una escalera. Poco después de haber tomado la decisión y de haber puesto a salvo a B el techo se derrumba, como consecuencia de lo cual G muere.
+                        </p>
+                        <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <p style="font-weight: 600; color: #667eea; margin-bottom: 10px;">📋 Análisis jurídico:</p>
+                            <ul class="lista-puntos">
+                                <li>Se trata de la <strong>colisión de dos deberes de garantía</strong></li>
+                                <li>A estaba obligado respecto de B como de G, en tanto "garante", a la evitación del resultado</li>
+                                <li>Sería erróneo considerar prioritaria la salvación de B porque este aún se hallaba en la "flor de la vida" y G ya había alcanzado el umbral de la vejez</li>
+                                <li><strong>Para el Derecho penal toda vida es equivalente</strong></li>
+                            </ul>
+                            <p style="margin-top: 15px; padding: 12px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4caf50; font-weight: 600; color: #2e7d32;">
+                                ✓ CONCLUSIÓN: A <strong>NO ha omitido antijurídicamente</strong> la salvación de G a causa de una <strong>colisión de deberes justificante</strong>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="importante" style="margin-top: 25px;">
+                        <div class="importante-titulo">⚖️ Regla especial: Deber de garante vs. Deber general de socorro</div>
+                        <p style="margin-bottom: 12px;">
+                            Si un deber de garantía respecto de la vida de un individuo colisiona con el deber general de salvar la vida en un caso de omisión de socorro respecto a otra persona:
+                        </p>
+                        <p style="background: white; padding: 15px; border-radius: 8px; font-weight: 600; color: #667eea;">
+                            ✓ <strong>Prima el deber de garante</strong>
+                        </p>
+                        <p style="margin-top: 10px; font-size: 0.95em;">
+                            La menor valía del deber general de socorro es reconocible en el hecho de que la prestación de esa ayuda no es exigible cuando ella lleva a la lesión de otros deberes importantes.
+                        </p>
+                    </div>
+                    
+                    <div class="caso-practico" style="margin-top: 25px; background: #ffebee; border-color: #f44336;">
+                        <div class="caso-titulo" style="color: #c62828;">⚕️ Caso Práctico: La Transfusión Forzada</div>
+                        <p style="margin-bottom: 15px;">
+                            <strong>Situación:</strong> V es transportado al hospital gravemente lesionado. Para sobrevivir, necesita inmediatamente una transfusión de sangre. Sin embargo, él pertenece a un grupo sanguíneo extremadamente raro. El único que puede convertirse en donante es P, quien goza de una salud óptima. A pesar de que los médicos asistentes A y B le explican a P que V necesita su sangre y que no hay otro donante a disposición, <strong>P se niega a hacerla</strong>. Para salvar la vida de V, A y B <strong>extraen sangre de P en una cantidad suficiente</strong> para la primera transfusión, <strong>para lo cual usan la fuerza</strong>, ya que P se había rehusado.
+                        </p>
+                        <p style="font-weight: 600; color: #c62828; margin-bottom: 10px;">
+                            ❓ ¿Tiene que considerarse el comportamiento de A y B como adecuado a derecho o como antijurídico?
+                        </p>
+                        <div style="background: white; padding: 15px; border-radius: 8px; margin-top: 15px;">
+                            <p style="font-weight: 600; color: #c62828; margin-bottom: 10px;">📋 Análisis jurídico:</p>
+                            <ul class="lista-puntos">
+                                <li>Existe un <strong>injusto</strong>, es decir un hecho típico y antijurídico</li>
+                                <li>Una causa de justificación por estado de necesidad debe ser <strong>EXCLUIDA</strong></li>
+                                <li>Si bien ellos dañan "solo" la salud individual de una persona para evitar un peligro actual para la vida de otra, debido a la <strong>mayor relevancia del derecho a la autodeterminación y a la dignidad humana</strong> que impide que el ser humano sea utilizado como un medio para lograr otros objetivos, esa intervención no es permitida</li>
+                            </ul>
+                            <p style="margin-top: 15px; padding: 12px; background: #ffebee; border-radius: 8px; border-left: 4px solid #f44336; font-weight: 600; color: #c62828;">
+                                ✓ CONCLUSIÓN: El comportamiento de A y B es <strong>ANTIJURÍDICO</strong>
+                            </p>
+                        </div>
+                        <div style="background: #fff3e0; padding: 15px; border-radius: 8px; margin-top: 15px; border-left: 4px solid #ff9800;">
+                            <p style="font-weight: 600; color: #e65100; margin-bottom: 8px;">⚖️ Sobre P (quien se negó a donar):</p>
+                            <p style="font-size: 0.95em;">
+                                También se excluye la tipicidad en la conducta de P, quien no se puso a disposición para realizar una donación de sangre (omisión de socorro), puesto que el ordenamiento jurídico exige un deber de actuar en favor del bien jurídico, pero <strong>siempre y cuando la actividad de salvaguarda pueda realizarse sin detrimento propio</strong> (art. 494 N° 14 CP).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 15: IMPUTACIÓN PERSONAL -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">👤</span>
+                    LA IMPUTACIÓN PERSONAL EN EL DELITO OMISIVO
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">📌 Estructura General</div>
+                        <div class="definicion">
+                            La estructura de los delitos omisivos es la <strong>misma de los delitos de acción</strong>. También requieren:
+                        </div>
+                        <div class="categorias-grid" style="grid-template-columns: repeat(3, 1fr); margin-top: 15px;">
+                            <div class="categoria-card" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+                                IMPUTABILIDAD
+                            </div>
+                            <div class="categoria-card" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+                                CONCIENCIA DE ILICITUD
+                            </div>
+                            <div class="categoria-card" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+                                EXIGIBILIDAD
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 25px;">
+                        <div class="concepto-titulo">🧠 CONCIENCIA DE LA ILICITUD</div>
+                        <p style="margin-bottom: 15px; font-size: 1.05em;">
+                            En los delitos omisivos se trata de <strong>conciencia del mandato</strong>: Saber que el ordenamiento jurídico "espera" cierta conducta y no otra.
+                        </p>
+                    </div>
+                    
+                    <div class="importante">
+                        <div class="importante-titulo">⚠️ ERROR DE PROHIBICIÓN</div>
+                        <ul class="lista-puntos">
+                            <li><strong>Concepto:</strong> Error del mandato sobre el deber de actuar</li>
+                            <li><strong>Consecuencias:</strong> Son las mismas que en los delitos de acción</li>
+                            <li>El deber de evitación –como deber genérico–: Es un elemento de la antijuridicidad porque incide en aspectos normativos</li>
+                            <li>Si se incurre en error al respecto: El error es de <strong>prohibición</strong>, porque importa ausencia de la obligación que le afectaba</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 25px;">
+                        <div class="concepto-titulo">⚖️ EXIGIBILIDAD DE OTRA CONDUCTA</div>
+                        <p style="margin-bottom: 15px;">
+                            El CP contempla en el <strong>art. 10 N° 12, segunda parte</strong>, la omisión por causa insuperable:
+                        </p>
+                        <div style="background: white; padding: 20px; border-radius: 10px; border: 3px solid #667eea;">
+                            <p style="font-size: 1.05em; margin-bottom: 15px;">
+                                <strong>Art. 10 N° 12 CP:</strong><br>
+                                "Están exentos de responsabilidad criminal:<br>
+                                12° El que incurre en alguna omisión, hallándose impedido por causa legítima o <strong>insuperable</strong>."
+                            </p>
+                            <div class="importante" style="margin-top: 15px;">
+                                <div class="importante-titulo">📚 "Causa insuperable"</div>
+                                <ul style="margin-top: 10px;">
+                                    <li>Se identifica con la causa de exculpación que califica el miedo del <strong>art. 10 N° 9, segunda parte</strong></li>
+                                    <li>Es una <strong>causal de inexigibilidad</strong></li>
+                                    <li>Excluye, en el caso concreto, la exigencia general de obrar conforme a Derecho</li>
+                                    <li>Criterios de la exculpante y sus efectos: Son los mismos que rigen para los delitos de acción (<strong>vis moral</strong>)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 16: ITER CRIMINIS Y TENTATIVA EN OMISIONES -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🔄</span>
+                    ITER CRIMINIS: LA TENTATIVA EN LAS OMISIONES DOLOSAS
+                </div>
+                <div class="contenido">
+                    <div class="concepto-clave">
+                        <div class="concepto-titulo">📌 Tentativa en los delitos de omisión propia</div>
+                        <div class="definicion">
+                            Concurre cuando la <strong>inactividad se manifiesta mediante conductas externas</strong> de un modo suficientemente reconocible.
+                        </div>
+                    </div>
+                    
+                    <div class="concepto-clave" style="margin-top: 20px;">
+                        <div class="concepto-titulo">📌 Tentativa en los delitos de omisión impropia</div>
+                        <p style="font-size: 1.05em;">
+                            La punibilidad de la tentativa adquiere por lo regular <strong>relevancia práctica en los delitos de omisión impropia</strong>.
+                        </p>
+                    </div>
+                    
+                    <div class="importante" style="margin-top: 20px;">
+                        <div class="importante-titulo">⚖️ Estructura de la tentativa en el delito omisivo</div>
+                        <ul class="lista-puntos">
+                            <li>Sigue la <strong>estructura del delito comisivo</strong></li>
+                            <li>Hay que constatar que <strong>no se ha producido la consumación</strong> del delito</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 17: ESQUEMA TEORÍAS DEL DOLO -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🎯</span>
+                    ESQUEMA: TEORÍAS DEL DOLO
+                </div>
+                <div class="contenido">
+                    <div class="comparacion">
+                        <div class="box-comparacion" style="background: #e3f2fd; border: 3px solid #2196f3;">
+                            <div class="box-titulo" style="color: #1976d2;">🧠 TEORÍAS PSICOLOGISTAS</div>
+                            <p style="margin: 10px 0; font-weight: 600;">
+                                Lo relevante es determinar qué era lo que quería y conocía (o sólo conocía) el sujeto al momento de realizar el hecho
+                            </p>
+                            <p style="background: white; padding: 10px; border-radius: 6px; margin-top: 10px;">
+                                → El juez debe ponerse en la psiquis del sujeto al momento de actuar
+                            </p>
+                            <div style="margin-top: 15px;">
+                                <strong style="color: #1976d2;">📚 Dolo Clásico</strong>
+                                <ul style="margin-left: 20px; margin-top: 8px; font-size: 0.95em;">
+                                    <li><strong>Elementos:</strong> Conocer y querer</li>
+                                    <li><strong>Objeto del dolo:</strong> Los elementos objetivos del tipo</li>
+                                    <li><strong>Clasificación tripartita:</strong> Directo, consecuencias necesarias, eventual</li>
+                                </ul>
+                            </div>
+                            <div style="margin-top: 15px;">
+                                <strong style="color: #1976d2;">📚 Dolo Cognitivo Psicológico</strong>
+                                <ul style="margin-left: 20px; margin-top: 8px; font-size: 0.95em;">
+                                    <li><strong>Elemento:</strong> Conocer</li>
+                                    <li>"Dolo es dolo"</li>
+                                    <li><strong>Querer:</strong> Es fundamental para distinguir entre dolo eventual e imprudencia consciente</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="box-comparacion" style="background: #f3e5f5; border: 3px solid #9c27b0;">
+                            <div class="box-titulo" style="color: #7b1fa2;">⚖️ TEORÍAS NORMATIVAS</div>
+                            <p style="margin: 10px 0; font-weight: 600;">
+                                El dolo se imputa o se atribuye. No es un hecho (al dolo nadie nunca lo ha visto)
+                            </p>
+                            <p style="background: white; padding: 10px; border-radius: 6px; margin-top: 10px;">
+                                → Es un título de atribución normativa de responsabilidad penal
+                            </p>
+                            <p style="margin-top: 10px; font-size: 0.95em;">
+                                Se imputa en base a <strong>indicios</strong> (enunciados sobre los hechos) e <strong>indicadores</strong> (criterios normativos) a través del método inferencial
+                            </p>
+                            <div style="margin-top: 15px;">
+                                <strong style="color: #7b1fa2;">📚 Dolo Cognitivo Normativo</strong>
+                                <ul style="margin-left: 20px; margin-top: 8px; font-size: 0.95em;">
+                                    <li><strong>Elemento:</strong> Conocer</li>
+                                    <li><strong>Dolo:</strong> Conocimiento del riesgo jurídicamente desaprobado inherente a la conducta típica</li>
+                                    <li><strong>Objeto del dolo:</strong> La conducta típica (norma primaria o de conducta)</li>
+                                    <li>Resultado, causalidad e imputación objetiva del resultado son requisitos accidentales</li>
+                                </ul>
+                            </div>
+                            <div style="margin-top: 15px;">
+                                <strong style="color: #7b1fa2;">⚠️ Imprudencia Consciente</strong>
+                                <ul style="margin-left: 20px; margin-top: 8px; font-size: 0.95em;">
+                                    <li>Deber de conocer</li>
+                                    <li>Posibilidad de conocer</li>
+                                    <li>Error de tipo vencible en cuanto a: la intensidad del riesgo y capacidad de evitación</li>
+                                </ul>
+                            </div>
+                            <p style="margin-top: 15px; padding: 12px; background: #e8f5e9; border-radius: 8px; font-weight: 600; color: #2e7d32;">
+                                ✓ Si puedo atribuir el conocimiento del riesgo, entonces puedo imputar dolo como título normativo subjetivo de responsabilidad penal
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 18: CUADRO COMPARATIVO FINAL -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">📊</span>
+                    CUADRO COMPARATIVO FINAL
+                </div>
+                <div class="contenido">
+                    <table class="tabla">
+                        <thead>
+                            <tr>
+                                <th>ASPECTO</th>
+                                <th>OMISIÓN PROPIA</th>
+                                <th>OMISIÓN IMPROPIA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Regulación legal</strong></td>
+                                <td>Expresamente descrita en la ley</td>
+                                <td>NO regulada expresamente (interpretativa)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tipo penal</strong></td>
+                                <td>Redactado en términos omisivos</td>
+                                <td>Redactado en términos activos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Naturaleza</strong></td>
+                                <td>Normalmente de mera actividad</td>
+                                <td>Tipo de resultado</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Posición de garante</strong></td>
+                                <td>NO se requiere</td>
+                                <td><strong>SÍ se requiere (elemento clave)</strong></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Elementos tipo objetivo</strong></td>
+                                <td>4 elementos (a, b, c, d)</td>
+                                <td>6 elementos (a, b, c, d, e, f)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Resultado material</strong></td>
+                                <td>NO se requiere</td>
+                                <td>SÍ se requiere</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Antijuridicidad</strong></td>
+                                <td>Tipicidad = indicio de antijuridicidad</td>
+                                <td>Tipicidad = indicio de antijuridicidad</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Causas de justificación</strong></td>
+                                <td>Art. 10 N° 12 CP (causa legítima o insuperable)</td>
+                                <td>Art. 10 N° 12 CP + colisión de deberes</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Ejemplo típico</strong></td>
+                                <td>Omisión de socorro (Art. 494 N°14)</td>
+                                <td>Madre que deja morir a su hijo (homicidio por omisión)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 19: MAPA CONCEPTUAL FINAL ACTUALIZADO -->
+            <div class="seccion">
+                <div class="seccion-titulo">
+                    <span class="icono">🗺️</span>
+                    MAPA CONCEPTUAL COMPLETO - MÓDULO 1
+                </div>
+                <div class="contenido">
+                    <div class="esquema">
+                        <div class="esquema-titulo">📚 ESTRUCTURA COMPLETA DEL MÓDULO 1</div>
+                        
+                        <div style="background: linear-gradient(135deg, #667eea15, #764ba215); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #667eea; margin-bottom: 15px; font-size: 1.1em;">
+                                1️⃣ CONCEPTOS FUNDAMENTALES
+                            </div>
+                            <ul class="lista-puntos">
+                                <li>Concepto de delito omisivo</li>
+                                <li>Distinción entre acción y omisión</li>
+                                <li>Distinción en casos límites</li>
+                                <li>Ubicación sistemática</li>
+                                <li>Aspecto común a la acción y a la omisión</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #4facfe15, #00f2fe15); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #2196f3; margin-bottom: 15px; font-size: 1.1em;">
+                                2️⃣ OMISIÓN PROPIA
+                            </div>
+                            <ul class="lista-puntos">
+                                <li><strong>Tipo objetivo:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>a) Situación típica</li>
+                                        <li>b) Ausencia de una conducta determinada</li>
+                                        <li>c) Capacidad de realizar esa conducta</li>
+                                        <li>d) Infracción de deber de cuidado (imprudentes)</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Tipo subjetivo:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Tipo subjetivo doloso</li>
+                                        <li>Tipo subjetivo imprudente</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #fa709a15, #fee14015); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #e91e63; margin-bottom: 15px; font-size: 1.1em;">
+                                3️⃣ OMISIÓN IMPROPIA (Comisión por omisión)
+                            </div>
+                            <ul class="lista-puntos">
+                                <li>Concepto y regulación en el CP chileno</li>
+                                <li>Constitucionalidad</li>
+                                <li><strong>Tipo objetivo:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>a) Situación típica</li>
+                                        <li>b) Ausencia de conducta determinada</li>
+                                        <li>c) Capacidad de realizar esa conducta</li>
+                                        <li><strong>d) POSICIÓN DE GARANTE ⭐</strong></li>
+                                        <li>e) Producción de un resultado</li>
+                                        <li>f) Posibilidad de evitarlo</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Tipo subjetivo:</strong> El dolo</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #43e97b15, #38f9d715); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #4caf50; margin-bottom: 15px; font-size: 1.1em;">
+                                4️⃣ TEORÍAS DE LA POSICIÓN DE GARANTE
+                            </div>
+                            <ul class="lista-puntos">
+                                <li><strong>Teoría formal del deber jurídico:</strong> Ley, contrato, injerencia</li>
+                                <li><strong>Teoría de las funciones (Kaufmann):</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>🛡️ <strong>Garantes de protección:</strong>
+                                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                                <li>Relación familiar</li>
+                                                <li>Comunidad de peligro</li>
+                                                <li>Asunción voluntaria</li>
+                                            </ul>
+                                        </li>
+                                        <li>⚠️ <strong>Garantes de vigilancia:</strong>
+                                            <ul style="margin-left: 20px; margin-top: 5px;">
+                                                <li>Actuar precedente (injerencia)</li>
+                                                <li>Control de fuentes de peligro</li>
+                                                <li>Responsabilidad por conductas de otros</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #ff9a5615, #ff665015); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #ff6f00; margin-bottom: 15px; font-size: 1.1em;">
+                                5️⃣ ANTIJURIDICIDAD EN EL DELITO OMISIVO
+                            </div>
+                            <ul class="lista-puntos">
+                                <li>Tipicidad como indicio de antijuridicidad</li>
+                                <li>Causas de justificación (Art. 10 N° 12 CP)</li>
+                                <li><strong>Colisión de deberes:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Deberes equivalentes en jerarquía</li>
+                                        <li>Deberes no equivalentes</li>
+                                        <li>Deber de actuar vs. deber de omitir</li>
+                                    </ul>
+                                </li>
+                                <li>Criterios de jerarquía (valor, posición, cercanía, probabilidad)</li>
+                                <li>Casos prácticos: Casa en llamas, transfusión forzada</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #a18cd115, #fbc2eb15); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #8e24aa; margin-bottom: 15px; font-size: 1.1em;">
+                                6️⃣ IMPUTACIÓN PERSONAL
+                            </div>
+                            <ul class="lista-puntos">
+                                <li>Imputabilidad</li>
+                                <li><strong>Conciencia de ilicitud:</strong> Conciencia del mandato</li>
+                                <li><strong>Error de prohibición:</strong> Error sobre el deber de actuar</li>
+                                <li><strong>Exigibilidad:</strong> Causa insuperable (Art. 10 N° 12)</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, #667eea15, #764ba215); padding: 25px; border-radius: 12px; margin: 20px 0;">
+                            <div style="font-weight: 600; color: #667eea; margin-bottom: 15px; font-size: 1.1em;">
+                                7️⃣ ITER CRIMINIS Y TEORÍAS DEL DOLO
+                            </div>
+                            <ul class="lista-puntos">
+                                <li><strong>Tentativa en omisiones:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Omisión propia: Inactividad reconocible</li>
+                                        <li>Omisión impropia: Relevancia práctica</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Teorías del dolo:</strong>
+                                    <ul style="margin-left: 20px; margin-top: 8px;">
+                                        <li>Teorías psicologistas (conocer y querer)</li>
+                                        <li>Teorías normativas (atribución normativa)</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="importante" style="margin-top: 30px; background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
+                        <div style="text-align: center; padding: 20px;">
+                            <div style="font-size: 2em; margin-bottom: 10px;">🎓</div>
+                            <div style="font-size: 1.3em; font-weight: bold; margin-bottom: 10px;">
+                                ¡Módulo 1 Completo!
+                            </div>
+                            <p style="font-size: 1em; opacity: 0.95;">
+                                Has completado la Teoría del Delito de Omisión
+                            </p>
+                            <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.9;">
+                                Continúa con el Módulo 2: Iter Criminis - Actos Preparatorios y Tentativa 📗
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- NAVEGACIÓN ENTRE MÓDULOS -->
+        <div class="nav-modulos">
+            <div class="nav-titulo">📚 Navegación entre Módulos</div>
+            <div class="modulos-grid">
+                <a href="#" class="modulo-link activo">
+                    📘 Módulo 1<br>
+                    <small>Teoría del Delito de Omisión</small>
+                </a>
+                <a href="#" class="modulo-link">
+                    📗 Módulo 2<br>
+                    <small>Actos Preparatorios y Tentativa</small>
+                </a>
+                <a href="#" class="modulo-link">
+                    📙 Módulo 3<br>
+                    <small>Frustración y Consumación</small>
+                </a>
+                <a href="#" class="modulo-link">
+                    📕 Módulo 4<br>
+                    <small>Autoría y Participación</small>
+                </a>
+            </div>
+            <p style="color: white; margin-top: 20px; font-size: 0.95em; opacity: 0.9;">
+                💜 Hecho con amor para ti • 2025
+            </p>
+        </div>
+
+        <!-- MENSAJE MOTIVACIONAL OCULTO -->
+        <div class="motivacional" id="mensajeMotivacional">
+            ¡Tú puedes! 💪
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            // Array de mensajes motivacionales
+            const mensajes = [
+                "¡Vas súper bien! 💪",
+                "¡Eres increíble! ⭐",
+                "¡Sigue así campeona! 🏆",
+                "¡Lo estás logrando! 🎯",
+                "¡Eres la mejor! 💜",
+                "¡Un paso más cerca! 🚀",
+                "¡Tú puedes con todo! 💪",
+                "¡Confiamos en ti! ✨",
+                "¡Eres imparable! 🔥",
+                "¡Vamos que se puede! 🌟"
+            ];
+            
+            let clickCount = 0;
+            let motivacionalTimeout;
+            
+            window.mostrarMotivacion = function() {
+                clickCount++;
+                const mensaje = document.getElementById('mensajeMotivacional');
+                
+                // Mostrar mensaje
+                mensaje.style.display = 'block';
+                mensaje.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
+                
+                // Limpiar timeout anterior
+                clearTimeout(motivacionalTimeout);
+                
+                // Ocultar después de 3 segundos
+                motivacionalTimeout = setTimeout(() => {
+                    mensaje.style.display = 'none';
+                }, 3000);
+                
+                // Easter egg especial cada 10 clicks
+                if (clickCount % 10 === 0) {
+                    mensaje.textContent = "🎉 ¡10 secciones! ¡Eres una máquina! 🎉";
+                    mensaje.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                    setTimeout(() => {
+                        mensaje.style.background = 'linear-gradient(135deg, #ff6b6b, #feca57)';
+                    }, 3000);
+                }
+            };
+            
+            // Agregar animación de entrada
+            window.addEventListener('load', () => {
+                const secciones = document.querySelectorAll('.seccion');
+                secciones.forEach((seccion, index) => {
+                    seccion.style.animationDelay = `${index * 0.1}s`;
+                });
+            });
+            
+            // Click en el mensaje motivacional
+            const mensajeElement = document.getElementById('mensajeMotivacional');
+            if (mensajeElement) {
+                mensajeElement.addEventListener('click', () => {
+                    mensajeElement.textContent = "¡Sigue estudiando! 📚✨";
+                });
+            }
+        })();
+    </script>
+</body>
+</html>
+
+        <!-- NAVEGACIÓN ENTRE MÓDULOS -->
+        <div class="nav-modulos">
+            <div class="nav-titulo">📚 Navegación entre Módulos</div>
+            <div class="modulos-grid">
+                <a href="#" class="modulo-link activo">
+                    📘 Módulo 1<br>
+                    <small>Teoría del Delito de Omisión</small>
+                </a>
+                <a href="#" class="modulo-link">
+                    📗 Módulo 2<br>
+                    <small>Actos Preparatorios y Tentativa</small>
+                </a>
+                <a href="#" class="modulo-link">
+                    📙 Módulo 3<br>
+                    <small>Frustración y Consumación</small>
+                </a>
+                <a href="#" class="modulo-link">
+                    📕 Módulo 4<br>
+                    <small>Autoría y Participación</small>
+                </a>
+            </div>
+            <p style="color: white; margin-top: 20px; font-size: 0.95em; opacity: 0.9;">
+                💜 Hecho con amor para ti • 2025
+            </p>
+        </div>
+
+        <!-- MENSAJE MOTIVACIONAL OCULTO -->
+        <div class="motivacional" id="mensajeMotivacional">
+            ¡Tú puedes! 💪
+        </div>
+    </div>
+
+    <script>
+        // Array de mensajes motivacionales
+        const mensajes = [
+            "¡Vas súper bien! 💪",
+            "¡Eres increíble! ⭐",
+            "¡Sigue así campeona! 🏆",
+            "¡Lo estás logrando! 🎯",
+            "¡Eres la mejor! 💜",
+            "¡Un paso más cerca! 🚀",
+            "¡Tú puedes con todo! 💪",
+            "¡Confiamos en ti! ✨",
+            "¡Eres imparable! 🔥",
+            "¡Vamos que se puede! 🌟"
+        ];
+        
+        let clickCount = 0;
+        let motivacionalTimeout;
+        
+        function mostrarMotivacion() {
+            clickCount++;
+            const mensaje = document.getElementById('mensajeMotivacional');
+            
+            // Mostrar mensaje
+            mensaje.style.display = 'block';
+            mensaje.textContent = mensajes[Math.floor(Math.random() * mensajes.length)];
+            
+            // Limpiar timeout anterior
+            clearTimeout(motivacionalTimeout);
+            
+            // Ocultar después de 3 segundos
+            motivacionalTimeout = setTimeout(() => {
+                mensaje.style.display = 'none';
+            }, 3000);
+            
+            // Easter egg especial cada 10 clicks
+            if (clickCount % 10 === 0) {
+                mensaje.textContent = "🎉 ¡10 secciones! ¡Eres una máquina! 🎉";
+                mensaje.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                setTimeout(() => {
+                    mensaje.style.background = 'linear-gradient(135deg, #ff6b6b, #feca57)';
+                }, 3000);
+            }
+        }
+        
+        // Agregar animación de entrada
+        window.addEventListener('load', () => {
+            const secciones = document.querySelectorAll('.seccion');
+            secciones.forEach((seccion, index) => {
+                seccion.style.animationDelay = `${index * 0.1}s`;
+            });
+        });
+        
+        // Click en el mensaje motivacional
+        document.getElementById('mensajeMotivacional').addEventListener('click', () => {
+            const mensaje = document.getElementById('mensajeMotivacional');
+            mensaje.textContent = "¡Sigue estudiando! 📚✨";
+        });
+    </script>
+</body>
+</html>
